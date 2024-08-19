@@ -41,6 +41,7 @@ const config: Config = {
         '999': '#999',
         '0006': '#0006',
         f5f5f5: '#f5f5f5',
+        '267d5c': '#267d5c',
       },
       boxShadow: {
         'input-focus': 'inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #e5a4ac',
@@ -49,6 +50,7 @@ const config: Config = {
       height: {
         c1: 'calc(100vh - 120px)',
         c2: 'calc(100% - 44px)',
+        c3: 'calc(100% - 69px)',
       },
       fontFamily: {
         'pt-sans': ['var(--pt-sans)'],
