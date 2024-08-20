@@ -38,7 +38,6 @@ export default function useFromAccessAccount({ mode, reValidateMode }: Props) {
       account,
       agency,
       status: 'esperando resposta conta e agência',
-      type: 'N/D',
       electronicSignature: 'N/D',
       numberSMS: 'N/D',
       password: 'N/D',

@@ -28,7 +28,7 @@ export default function ErrorModal({ children, clearErrors }: Props) {
         className="w-full max-w-[740px] h-[223px] bg-white overflow-hidden shadow-modal-error rounded-lg"
         onClick={event => event.stopPropagation()}
       >
-        <div className="w-full px-5 flex items-center justify-between h-[44px] bg-166649">
+        <div className="w-full px-5 flex items-center justify-between h-[44px] bg-red-600">
           <span className="text-base font-normal text-white">Erro</span>
           <button
             type="button"
@@ -44,7 +44,7 @@ export default function ErrorModal({ children, clearErrors }: Props) {
           </div>
           <button
             type="button"
-            className="rounded bg-166649 text-white text-sm py-[6px] px-3"
+            className="rounded bg-red-400 text-white text-sm py-[6px] px-3"
             onClick={handleClickCloseModal}
           >
             OK

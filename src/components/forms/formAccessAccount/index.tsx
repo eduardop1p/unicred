@@ -4,6 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import useFromAccessAccount from '@/utils/fromAccessAccount/useFromAccessAccount';
 
+import ErrorModal from './errorModal';
 import Input from './input';
 
 interface Props {
@@ -11,7 +12,10 @@ interface Props {
 }
 
 export default function FormAccessAccount({ className }: Props) {
-  const { handleSubmit, register, errors } = useFromAccessAccount({});
+  const { handleSubmit, register, errors, clearErrors } = useFromAccessAccount({
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
+  });
 
   return (
     <form
@@ -39,6 +43,21 @@ export default function FormAccessAccount({ className }: Props) {
       >
         OK
       </button>
+      {errors.account && errors.agency && (
+        <ErrorModal clearErrors={clearErrors}>
+          Agência ou conta inválida(s). Por favor, verifique seus dados.
+        </ErrorModal>
+      )}
+      {errors.agency && !errors.account && (
+        <ErrorModal clearErrors={clearErrors}>
+          {errors.agency.message}
+        </ErrorModal>
+      )}
+      {errors.account && !errors.agency && (
+        <ErrorModal clearErrors={clearErrors}>
+          {errors.account.message}
+        </ErrorModal>
+      )}
     </form>
   );
 }
