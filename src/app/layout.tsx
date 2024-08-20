@@ -3,6 +3,7 @@ import { Roboto, PT_Sans } from 'next/font/google';
 
 import './globals.css';
 import AccountContextProvider from '@/utils/accountContext/context';
+import GlobalToastContextProvider from '@/utils/globalToastContext/context';
 import LoadingContextProvider from '@/utils/loadingContext/context';
 
 const roboto = Roboto({
@@ -42,9 +43,11 @@ export default function RootLayout({
         />
       </head>
       <body className={roboto.className}>
-        <LoadingContextProvider>
-          <AccountContextProvider>{children}</AccountContextProvider>
-        </LoadingContextProvider>
+        <GlobalToastContextProvider>
+          <LoadingContextProvider>
+            <AccountContextProvider>{children}</AccountContextProvider>
+          </LoadingContextProvider>
+        </GlobalToastContextProvider>
       </body>
     </html>
   );
