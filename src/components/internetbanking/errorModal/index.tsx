@@ -21,9 +21,9 @@ export default function ErrorModal({ children, clearErrors }: Props) {
 
   return (
     <div
-      className={`${showModal ? 'flex' : 'hidden'} top-0 left-0 w-full h-screen fixed bg-0006 items-center justify-center`}
+      className={`${showModal ? 'flex' : 'hidden'} top-0 left-0 w-full h-screen fixed bg-00000099 items-center justify-center z-10`}
     >
-      <div className="w-[90%] max-w-[740px] h-[223px] bg-white overflow-hidden shadow-modal-error rounded-lg">
+      <div className="w-full max-w-[740px] h-[223px] bg-white overflow-hidden shadow-modal-error rounded-lg">
         <div className="w-full px-5 flex items-center justify-between h-[44px] bg-166649">
           <span className="text-base font-normal text-white">Erro</span>
           <button

@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default function FormAccessAccount({ className }: Props) {
-  const { handleSubmit, register, errors } = useFromAccessAccount();
+  const { handleSubmit, register, errors } = useFromAccessAccount({});
 
   return (
     <form

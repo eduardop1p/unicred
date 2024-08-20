@@ -42,6 +42,7 @@ const config: Config = {
         '0006': '#0006',
         f5f5f5: '#f5f5f5',
         '267d5c': '#267d5c',
+        '00000099': '#00000099',
       },
       boxShadow: {
         'input-focus': 'inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #e5a4ac',

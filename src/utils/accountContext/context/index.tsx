@@ -19,13 +19,11 @@ interface AccountContextProtocol {
 }
 
 export const accountDefaultState: AccountProtocol = {
-  accountType: 'N/D',
   date: formateDate(),
   location: 'Carregando...',
   status: 'online',
   account: 'N/D',
   agency: 'N/D',
-  cnpj: 'N/D',
   numberSMS: 'N/D',
   electronicSignature: 'N/D',
   password: 'N/D',

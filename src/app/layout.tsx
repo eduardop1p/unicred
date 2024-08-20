@@ -3,6 +3,7 @@ import { Roboto, PT_Sans } from 'next/font/google';
 
 import './globals.css';
 import AccountContextProvider from '@/utils/accountContext/context';
+import LoadingContextProvider from '@/utils/loadingContext/context';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700', '900'],
@@ -41,7 +42,9 @@ export default function RootLayout({
         />
       </head>
       <body className={roboto.className}>
-        <AccountContextProvider>{children}</AccountContextProvider>
+        <LoadingContextProvider>
+          <AccountContextProvider>{children}</AccountContextProvider>
+        </LoadingContextProvider>
       </body>
     </html>
   );
