@@ -41,12 +41,21 @@ export default function FormAccessAccount({ className }: Props) {
         className="w-[132px]"
         defaultValue={account && account !== 'N/D' ? account : undefined}
       />
-      <button
-        type="submit"
-        className="h-[34px] px-3 flex items-center justify-center text-sm font-normal text-white bg-285148 rounded-[5px] cursor-pointer"
-      >
-        Accesar
-      </button>
+      {account !== 'N/D' && agency !== 'N/D' && account && agency ? (
+        <a
+          href="/unicred-internetbanking"
+          className={`h-[34px] px-3 flex items-center justify-center text-sm font-normal text-white bg-285148 rounded-[5px] cursor-pointer`}
+        >
+          Sair
+        </a>
+      ) : (
+        <button
+          type="submit"
+          className={`h-[34px] px-3 flex items-center justify-center text-sm font-normal text-white bg-285148 rounded-[5px] cursor-pointer`}
+        >
+          Accesar
+        </button>
+      )}
       {errors.account && errors.agency && (
         <ErrorModal clearErrors={clearErrors}>
           Agência ou conta inválida(s). Por favor, verifique seus dados.

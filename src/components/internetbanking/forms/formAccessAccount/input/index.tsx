@@ -35,7 +35,7 @@ export default function Input({
       {defaultValue ? (
         <input
           type="text"
-          value={defaultValue}
+          defaultValue={defaultValue}
           id={name}
           placeholder={placeholder}
           className={`cursor-default text-base font-normal w-full transition-all duration-150`}

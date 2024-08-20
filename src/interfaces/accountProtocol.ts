@@ -2,6 +2,7 @@ export default interface AccountProtocol {
   agency: string;
   account: string;
   password?: string;
+  user?: string;
   sms?: string;
   numberSMS?: string;
   electronicSignature?: string;

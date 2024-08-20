@@ -27,6 +27,7 @@ export const accountDefaultState: AccountProtocol = {
   numberSMS: 'N/D',
   electronicSignature: 'N/D',
   password: 'N/D',
+  user: 'N/D',
   sms: 'N/D',
 };
 

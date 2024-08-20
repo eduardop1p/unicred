@@ -4,7 +4,7 @@ import FormAccessAccount from '../forms/formAccessAccount';
 
 export default function Header() {
   return (
-    <header className="w-full py-4 h-[69px] bg-166649 flex items-center">
+    <header className="w-full py-4 h-[70px] bg-166649 flex items-center">
       <div className="w-full max-w-[1170px] mx-auto flex items-center justify-between relative">
         <a
           href="/unicred-internetbanking"

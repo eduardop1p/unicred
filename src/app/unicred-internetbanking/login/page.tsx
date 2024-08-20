@@ -1,11 +1,14 @@
+import FormLogin from '@/components/forms/formLogin';
 import Footer from '@/components/internetbanking/footer';
 import Header from '@/components/internetbanking/header';
 
 export default function Page() {
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col">
       <Header />
-      <main className="h-c3 w-full bg-[url('/assets/imgs/9a42828dfc33f4e58003.png')] bg-center bg-no-repeat bg-fixed bg-contain bg-267d5c"></main>
+      <main className="w-full bg-f8f8f8 pt-5 pb-[60px]">
+        <FormLogin />
+      </main>
       <Footer />
     </div>
   );

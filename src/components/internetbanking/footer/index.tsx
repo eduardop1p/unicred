@@ -2,7 +2,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-166649 h-[85px] flex items-center">
+    <footer className="w-full bg-166649 h-[85px] flex items-center flex-none">
       <div className="w-full max-w-[1250px] mx-auto flex flex-wrap items-center gap-4 justify-center">
         <a
           href="https://novounicredinternet.e-unicred.com.br/unicred-internetbanking/preLogin/Seguranca"
