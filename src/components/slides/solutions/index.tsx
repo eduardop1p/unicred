@@ -67,11 +67,11 @@ export default function SlideSolutions() {
           return `<span class='${className}'>${items[index].title}</span>`;
         },
       }}
-      className="!w-full !h-[670px] !relative"
+      className="!w-full !h-auto !relative !pb-16 max-[800px]:!pb-7"
     >
       {items.map((item, i) => (
         <SwiperSlide key={i} className="!w-full">
-          <div className="w-full flex items-center justify-between gap-10">
+          <div className="w-full flex items-center justify-between gap-10 max-[1150px]:gap-0 max-[1150px]:flex-col">
             <div className="flex flex-col">
               <div className="flex flex-col mb-10">
                 <h1 className="text-[50px] font-light text-555555 leading-[1.5] uppercase">
@@ -108,17 +108,19 @@ export default function SlideSolutions() {
                 Todas Soluções
               </a>
             </div>
-            <Image
-              src={item.imgSrc}
-              width={640}
-              height={550}
-              alt={item.title}
-              className="flex-none"
-            />
+            <div className="w-full mx-auto max-w-[640px] h-[550px] max-[640px]:min-h-14 relative flex-none">
+              <Image
+                src={item.imgSrc}
+                sizes="100%"
+                fill
+                alt={item.title}
+                className="object-contain"
+              />
+            </div>
           </div>
         </SwiperSlide>
       ))}
-      <div className="my-pagination-solutions absolute bottom-[3px] z-[5] flex items-center gap-4 left-1/2 -translate-x-1/2 border-b border-solid border-b-c4c4c4"></div>
+      <div className="my-pagination-solutions w-full absolute bottom-[3px] z-[5] grid grid-cols-[repeat(auto-fit,minmax(55px,1fr))] items-center gap-4 left-1/2 -translate-x-1/2 border-b border-solid border-b-c4c4c4 max-[800px]:border-none max-[800px]:bottom-4"></div>
     </Swiper>
   );
 }

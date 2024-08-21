@@ -50,7 +50,7 @@ export default function StayInside({ euro, usd, ibov }: Props) {
 
   return (
     <div className="flex flex-col gap-[10px]">
-      <div className="grid grid-cols-[370px,1fr] w-full gap-[10px]">
+      <div className="grid grid-cols-[370px,1fr] w-full gap-[10px] max-[790px]:grid-cols-1">
         {itemsGrid1.map((item, i) => (
           <a
             href={item.href}
@@ -81,7 +81,7 @@ export default function StayInside({ euro, usd, ibov }: Props) {
           </a>
         ))}
       </div>
-      <div className="grid grid-cols-3 w-full gap-[10px]">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] w-full gap-[10px]">
         {itemsGrid2.map((item, i) => (
           <a
             href={item.href}

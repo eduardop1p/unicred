@@ -87,9 +87,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-f8f8f8 py-[70px] px-5 bg-gradient-footer">
+    <footer className="w-full bg-f8f8f8 py-[70px] px-5 bg-gradient-footer max-[570px]:py-[35px]">
       <div className="w-full max-w-[1140px] mx-auto">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-8">
           <div className="flex flex-col">
             <Menu {...menu1} />
             <p className="text-base font-normal text-555 mt-4">
@@ -170,7 +170,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="bg-c4c4c4 h-[1px] w-full mt-[40px] mb-[30px]"></div>
-        <div className="flex w-full justify-between gap-8">
+        <div className="flex w-full justify-between gap-8 max-[500px]:flex-col">
           <div className="flex flex-col">
             <p className="text-[13px] font-normal text-979797">
               Unicred do Brasil- Av. Paulista, Nº 2300, 19° Andar, Conj. 192,

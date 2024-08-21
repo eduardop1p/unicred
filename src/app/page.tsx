@@ -1,8 +1,9 @@
-export const revalidate = 600; // revalidar essa página a cada 10 minutos
+export const revalidate = 6000; // revalidar essa página a cada 10 minutos
 
 // Import Swiper styles
 import 'swiper/css';
 
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import getBrlVariation from '@/actions/getBrlVariation';
@@ -10,10 +11,15 @@ import getIbovVariation from '@/actions/getIbovVariation';
 import Footer from '@/components/footer';
 import FormSearchAgency from '@/components/forms/formSearchAgency';
 import Header from '@/components/header';
-import SlideChangeSicred from '@/components/slides/changeSicred';
 import SlideMainHome from '@/components/slides/mainHome';
 import SlideSolutions from '@/components/slides/solutions';
 import StayInside from '@/components/stayInside';
+const SlideChangeSicred = dynamic(
+  () => import('@/components/slides/changeSicred'),
+  {
+    ssr: false,
+  }
+);
 
 export default async function Page() {
   const euro = await getBrlVariation({ currencyPair: 'EUR-BRL' });
@@ -27,7 +33,7 @@ export default async function Page() {
         <SlideMainHome />
         <section
           id="change-sicred"
-          className="w-full flex flex-col py-[50px] items-center"
+          className="w-full flex flex-col py-[50px] items-center px-4"
         >
           <h1 className="text-555555 font-bold text-[40px] mb-10 text-center leading-[1.1]">
             Escolha Cooperar. Escolha Unicred.
@@ -61,8 +67,8 @@ export default async function Page() {
           </div>
         </section>
         <section className="bg-eceeef w-full py-[120px] px-5">
-          <div className="flex items-center justify-between w-full max-w-[1140px] mx-auto">
-            <div className="flex flex-col w-full max-w-[550px]">
+          <div className="flex items-center gap-5 justify-between w-full max-w-[1140px] mx-auto max-[810px]:flex-col max-[810px]:items-start">
+            <div className="flex flex-col w-full max-w-[550px] max-[810px]:max-w-none">
               <h1 className="text-[50px] font-light text-555555 leading-[1.2] uppercase">
                 Encontre uma Agência
               </h1>
@@ -73,23 +79,49 @@ export default async function Page() {
             <FormSearchAgency />
           </div>
         </section>
-        <section className='w-full h-[270px] bg-no-repeat bg-[url("/assets/imgs/bg_1366_mobile.jpg")] bg-cover flex items-center justify-center'>
-          <div className="w-full max-w-[1000px] mx-auto flex items-center justify-between gap-8">
+        <section className='w-full h-[270px] max-[570px]:py-4 max-[570px]:h-auto bg-no-repeat bg-[url("/assets/imgs/bg_1366_mobile.jpg")] bg-cover flex items-center justify-center'>
+          <div className="w-full max-w-[1030px] mx-auto flex items-center justify-between gap-8 px-4 max-[800px]:flex-row-reverse">
             <Image
               src="/assets/imgs/banner_mobile.png"
               width={182}
               height={360}
               alt="banner-mobile"
+              className="max-[570px]:hidden"
             />
-            <div className="flex flex-col gap-5 w-full max-w-[340px]">
-              <h1 className="text-[50px] font-semibold text-white leading-[1.1]">
-                Aplicativo Unicred Mobile
-              </h1>
-              <p className="text-lg font-semibold text-white leading-[1.5]">
-                Faça download do nosso app e facilite o seu dia a dia.
-              </p>
+            <div className="flex flex-col gap-5 w-full max-w-[340px] max-[570px]:max-w-none">
+              <div className="flex items-start justify-between gap-5">
+                <div className="flex flex-col gap-5 w-full">
+                  <h1 className="text-[50px] font-semibold text-white leading-[1.1]">
+                    Aplicativo Unicred Mobile
+                  </h1>
+                  <p className="text-lg font-semibold text-white leading-[1.5]">
+                    Faça download do nosso app e facilite o seu dia a dia.
+                  </p>
+                </div>
+                <Image
+                  src="/assets/imgs/banner_mobile.png"
+                  width={100}
+                  height={150}
+                  alt="banner-mobile"
+                  className="hidden max-[570px]:inline-block"
+                />
+              </div>
+              <div className="hidden items-center gap-2 max-[800px]:flex">
+                <Image
+                  src="/assets/svgs/apple-store.svg"
+                  width={150}
+                  height={50}
+                  alt="apple-store"
+                />
+                <Image
+                  src="/assets/svgs/google-store.svg"
+                  width={150}
+                  height={50}
+                  alt="google-store"
+                />
+              </div>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 max-[800px]:hidden">
               <Image
                 src="/assets/svgs/apple-store.svg"
                 width={206}

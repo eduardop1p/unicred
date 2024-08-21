@@ -1,11 +1,14 @@
+import { twMerge } from 'tailwind-merge';
+
 interface Props {
   width: number;
   height: number;
+  className?: string;
 }
 
-export default function Logo({ width, height }: Props) {
+export default function Logo({ width, height, className }: Props) {
   return (
-    <a href="/">
+    <a href="/" className={twMerge('w-fit', className)}>
       <svg
         viewBox="0 0 268 40"
         x="0px"

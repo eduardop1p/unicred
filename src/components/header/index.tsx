@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import FormAccessAccount from '../forms/formAccessAccount';
 import Logo from './logo';
+import MobileMenu from './mobileMenu';
 import Nav from './nav';
 
 export default function Header() {
@@ -14,7 +15,7 @@ export default function Header() {
   return (
     <header className="w-full bg-white p-3 border-t-[5px] border-solid border-t-a79450 flex flex-col gap-6 items-center">
       <div className="w-full max-w-[1140px] mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-[5px]">
+        <div className="flex items-center gap-[5px] max-[1200px]:hidden">
           <Image
             src="/assets/svgs/location.svg"
             alt="location"
@@ -33,8 +34,20 @@ export default function Header() {
             height={17}
           />
         </div>
+        <MobileMenu />
         <Logo width={200} height={45} />
-        <div className="flex items-center gap-1">
+        <a
+          href="/unicred-internetbanking"
+          className="hidden max-[1200px]:inline-block"
+        >
+          <svg viewBox="0 0 30.9 45" x="0px" y="0px" width={25} height={25}>
+            <path
+              d="M29.6 17.5H27V6.8C27 3.1 24 0 20.2 0h-9.4C7 0 4 3 4 6.8v10.7H1.3c-.7 0-1.3.6-1.3 1.3v17.1c0 5 4.1 9.1 9.1 9.1h12.7c5 0 9.1-4.1 9.1-9.1V18.8c0-.7-.6-1.3-1.3-1.3zm-9.7 19.4c-.2.3-.6.5-.9.5h-7c-.4 0-.7-.2-.9-.5-.2-.3-.3-.7-.1-1.1l2.1-5.6c-1-.8-1.7-2.1-1.7-3.4 0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2 0 1.3-.6 2.6-1.7 3.4l2.1 5.6c0 .3-.1.7-.3 1.1zm-14-19.4V6.8C5.9 3.6 7.6 2 10.7 2h9.4c3.2 0 4.8 1.7 4.8 4.8v10.7h-19z"
+              fill="#c4c4c4"
+            />
+          </svg>
+        </a>
+        <div className="flex items-center gap-1 max-[1200px]:hidden">
           <div
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => setShowForm(true)}

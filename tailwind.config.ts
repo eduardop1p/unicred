@@ -50,6 +50,7 @@ const config: Config = {
         b55755: '#b55755',
         ececec: '#ececec',
         ccc: '#ccc',
+        C4C4C4: '#C4C4C4',
       },
       boxShadow: {
         'input-focus': 'inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #e5a4ac',

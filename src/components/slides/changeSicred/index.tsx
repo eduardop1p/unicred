@@ -64,7 +64,7 @@ export default function SlideChangeSicred() {
       <>
         <button
           type="button"
-          className={`absolute top-1/2 -translate-y-1/2 -left-10 cursor-pointer z-[5]`}
+          className={`absolute top-1/2 -translate-y-1/2 -left-10 cursor-pointer z-[5] max-[1330px]:hidden`}
           onClick={handlePrev}
         >
           <Image
@@ -76,7 +76,7 @@ export default function SlideChangeSicred() {
         </button>
         <button
           type="button"
-          className={`absolute top-1/2 -translate-y-1/2 -right-10 cursor-pointer z-[5]`}
+          className={`absolute top-1/2 -translate-y-1/2 -right-10 cursor-pointer z-[5] max-[1330px]:hidden`}
           onClick={handleNext}
         >
           <Image
@@ -92,18 +92,30 @@ export default function SlideChangeSicred() {
         ref={sliderRef}
         slidesPerView={4.2}
         initialSlide={0}
+        spaceBetween={10}
         autoplay
         loop
+        breakpoints={{
+          1100: {
+            slidesPerView: 4.1,
+          },
+          800: {
+            slidesPerView: 3.2,
+          },
+          0: {
+            slidesPerView: 2.2,
+          },
+        }}
         modules={[Autoplay]}
         className="!w-full"
       >
         {items.map((item, i) => (
-          <SwiperSlide key={i} className="!h-[124px] !w-[284px] !mr-[10px]">
+          <SwiperSlide key={i} className="!h-[124px]">
             <a
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="h-full w-full rounded-[3px] text-center text-808080 text-[22px] flex items-center justify-center py-[30px] px-[10px] bg-eceeef hover:bg-008d6a hover:text-white transition-colors duration-200"
+              className="h-full rounded-[3px] text-center text-808080 text-[22px] flex items-center justify-center py-[30px] px-[10px] bg-eceeef hover:bg-008d6a hover:text-white transition-colors duration-200"
             >
               {item.title}
             </a>

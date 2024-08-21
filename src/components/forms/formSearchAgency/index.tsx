@@ -14,8 +14,8 @@ export default function FormSearchAgency() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-[10px]">
-      <div className="flex items-center gap-3 justify-between h-[54px] w-[337px] border border-solid border-c4c4c4 px-5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-[10px] w-full">
+      <div className="flex items-center gap-3 justify-between h-[54px] w-[337px] max-[810px]:w-full border border-solid border-c4c4c4 px-5">
         <input
           value={searchValue}
           type="text"
