@@ -31,7 +31,9 @@ export default function Input({
         className
       )}
     >
-      <label className="text-999 text-base font-normal">{label}</label>
+      <label className="text-999 text-base font-normal max-[600px]:hidden">
+        {label}:
+      </label>
       {defaultValue ? (
         <input
           type="text"
@@ -47,7 +49,7 @@ export default function Input({
           id={name}
           placeholder={placeholder}
           {...register(name)}
-          className={`text-base font-normal w-full transition-all duration-150`}
+          className={`text-base font-normal w-full transition-all duration-150 min-[600px]:placeholder:text-transparent`}
         />
       )}
     </div>

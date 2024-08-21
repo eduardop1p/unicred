@@ -25,7 +25,7 @@ export default function ErrorModal({ children, clearErrors }: Props) {
       onClick={handleClickCloseModal}
     >
       <div
-        className="w-full max-w-[740px] h-[223px] bg-white overflow-hidden shadow-modal-error rounded-lg"
+        className="w-[90%] max-w-[740px] bg-white overflow-hidden shadow-modal-error rounded-lg"
         onClick={event => event.stopPropagation()}
       >
         <div className="w-full px-5 flex items-center justify-between h-[44px] bg-166649">

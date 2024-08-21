@@ -40,7 +40,7 @@ export default function FormLogin() {
       onSubmit={handleSubmit}
       className="w-full max-w-[1200px] mx-auto flex flex-col gap-6"
     >
-      <div className="w-full grid grid-cols-2 h-[427px] gap-8">
+      <div className="w-full grid grid-cols-2 h-[400px] gap-8 max-[660px]:grid-cols-1 max-[660px]:h-auto">
         <div className="w-full border-solid border-ddd border flex flex-col rounded overflow-hidden h-full">
           <div className="w-full p-4 text-center text-5e5e47 text-lg border-solid border-b-ddd border-b">
             Digite seu usuário para acessar o Teclado Virtual

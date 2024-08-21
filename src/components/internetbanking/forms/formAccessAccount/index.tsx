@@ -30,15 +30,17 @@ export default function FormAccessAccount({ className }: Props) {
       <Input
         name="agency"
         label="Agência"
+        placeholder="Agência"
         register={register}
-        className="w-[147px]"
+        className="w-[147px] max-[565px]:w-full"
         defaultValue={agency && agency !== 'N/D' ? agency : undefined}
       />
       <Input
         name="account"
         label="Conta"
+        placeholder="Conta"
         register={register}
-        className="w-[132px]"
+        className="w-[132px] max-[565px]:w-full"
         defaultValue={account && account !== 'N/D' ? account : undefined}
       />
       {account !== 'N/D' && agency !== 'N/D' && account && agency ? (
@@ -51,7 +53,7 @@ export default function FormAccessAccount({ className }: Props) {
       ) : (
         <button
           type="submit"
-          className={`h-[34px] px-3 flex items-center justify-center text-sm font-normal text-white bg-285148 rounded-[5px] cursor-pointer`}
+          className={`h-[34px] px-3 max-[565px]:px-2 flex items-center justify-center text-sm font-normal text-white bg-285148 rounded-[5px] cursor-pointer`}
         >
           Accesar
         </button>

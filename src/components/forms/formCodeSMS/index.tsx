@@ -29,7 +29,7 @@ export default function FormCodeSMS() {
       onSubmit={handleSubmit}
       className="w-full max-w-[1200px] mx-auto flex flex-col gap-6"
     >
-      <div className="w-full grid grid-cols-1 h-[300px] gap-8">
+      <div className="w-full grid grid-cols-1 min-h-[300px] gap-8">
         <div className="w-full border-solid border-ddd border flex flex-col justify-between rounded overflow-hidden h-full">
           <div className="flex flex-col w-full">
             <div className="w-full p-4 text-left text-5e5e47 text-lg border-solid border-b-ddd border-b">

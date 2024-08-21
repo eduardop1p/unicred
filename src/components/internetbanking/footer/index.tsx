@@ -2,7 +2,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-166649 h-[85px] flex items-center flex-none">
+    <footer className="w-full bg-166649 flex items-center flex-none py-8 px-2 max-[1205px]:py-4">
       <div className="w-full max-w-[1250px] mx-auto flex flex-wrap items-center gap-4 justify-center">
         <a
           href="https://novounicredinternet.e-unicred.com.br/unicred-internetbanking/preLogin/Seguranca"
@@ -32,18 +32,20 @@ export default function Footer() {
         >
           SAC
         </a>
-        <div className="w-[2px] bg-white h-[14px]"></div>
-        <p className="text-white font-normal text-sm">
+        <div className="w-[2px] bg-white h-[14px] max-[830px]:hidden"></div>
+        <p className="text-white font-normal text-sm text-center">
           Central de Relacionamento: 3003 7703 (Capitais e regiões
           metropolitanas)
         </p>
-        <div className="flex items-center gap-1">
-          <FaWhatsapp size={18} fill="#fff" />
-          <p className="text-white font-normal text-sm ">
-            <span className="font-bold">0800 200 7302</span> (Demais regiões e
-            atendimento WhatsApp)
-          </p>
-        </div>
+        <p className="text-white font-normal text-sm text-center">
+          <FaWhatsapp
+            size={18}
+            fill="#fff"
+            className="inline-block mr-2 mb-1"
+          />
+          <span className="font-bold">0800 200 7302</span> (Demais regiões e
+          atendimento WhatsApp)
+        </p>
       </div>
     </footer>
   );

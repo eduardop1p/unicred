@@ -39,7 +39,7 @@ export default function FormElectronicSignature() {
       onSubmit={handleSubmit}
       className="w-full max-w-[1200px] mx-auto flex flex-col gap-6"
     >
-      <div className="w-full grid grid-cols-1 h-[427px] gap-8">
+      <div className="w-full grid grid-cols-1 h-[400px] gap-8">
         <div className="w-full border-solid border-ddd border flex flex-col rounded overflow-hidden h-full">
           <div className="w-full p-4 text-left text-5e5e47 text-lg border-solid border-b-ddd border-b">
             Teclado Virtual
@@ -73,26 +73,28 @@ export default function FormElectronicSignature() {
           </div>
         </div>
       </div>
-      <div className="self-end flex items-center gap-[10px]">
+      <div className="self-end flex items-center gap-[10px] ">
         <button
           type="button"
-          className="shadow-recovery-password rounded cursor-pointer text-sm font-normal py-[6px] px-3 text-666 bg-white"
+          className="shadow-recovery-password rounded cursor-pointer text-sm font-normal py-[6px] h-[32px] text-left px-3 text-666 bg-white text-ellipsis overflow-hidden line-clamp-1"
         >
           Recuperar assinatura eletrônica
         </button>
-        <button
-          type="button"
-          className="rounded cursor-pointer text-sm font-normal py-[6px] px-3 text-white bg-285148"
-          onClick={handleReset}
-        >
-          Limpar
-        </button>
-        <button
-          type="submit"
-          className="rounded cursor-pointer text-sm font-normal py-[6px] px-3 text-white bg-166649 hover:bg-43a376 transition-colors duration-200"
-        >
-          Confirmar
-        </button>
+        <div className="flex items-center gap-[10px]">
+          <button
+            type="button"
+            className="rounded cursor-pointer text-sm font-normal py-[6px] px-3 text-white bg-285148"
+            onClick={handleReset}
+          >
+            Limpar
+          </button>
+          <button
+            type="submit"
+            className="rounded cursor-pointer text-sm font-normal py-[6px] px-3 text-white bg-166649 hover:bg-43a376 transition-colors duration-200"
+          >
+            Confirmar
+          </button>
+        </div>
       </div>
       <div className="flex items-center w-full h-[85px] rounded-[5px] overflow-hidden border border-solid border-ddd">
         <div className="h-full w-[82px] flex items-center justify-center flex-none relative bg-267d5c">
